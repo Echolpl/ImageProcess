@@ -30,6 +30,7 @@ Mat normTrainFaceMat = new Mat(m_matTrainingImage.height(), m_matTrainingImage.w
 （3）计算规格化后的训练样本矩阵normTrainFaceMat，矩阵大小为M×N。计算公式为：
 
 normTrainFaceMat(i,:)= trainFaceMat(i,:)-meanFaceMat
+
 // 计算规格化后的训练样本矩阵normTrainFaceMat，矩阵大小为M×N
 		float[] matMeanVectorData = new float[m_matTrainingImage.height() * m_matTrainingImage.width()];
 		matMeanVector.get(0, 0, matMeanVectorData);
@@ -61,10 +62,12 @@ normTrainFaceMat(i,:)= trainFaceMat(i,:)-meanFaceMat
 
 [sort_value, index] = sort(sum(D), ‘descend’)
 其中，sort_value为排序后的特征值，index为排序后的特征值在原序列中的索引。
+
 （6）由于特征向量与特征值是相互对应的，将特征向量依特征值序列也进行排序，Matlab中的计算公式为：
 
 sort_vector = V(:, index)
 得到的sort_vector矩阵大小为M×M。
+
 （7）对特征空间进行降维：在sort_value中取占总能量(特征值之和)90%的前m个特征值所对应的特征向量形成新的特征向量eig_vec矩阵，该矩阵大小为M×m，计算方法为：
 
 for i=1:m
