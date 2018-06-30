@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="layoutPane" prefHeight="370.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MyController">
+   <children>
+      <MenuBar layoutY="-1.0" maxWidth="-Infinity" prefHeight="35.0" prefWidth="632.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="图像采集">
+            <items>
+                  <MenuItem fx:id="openImage" mnemonicParsing="false" onAction="#onMenuOpenImage" text="打开图像" />
+                  <MenuItem fx:id="normalize" mnemonicParsing="false" onAction="#onMenuNormImage" text="归一化" />
+                  <MenuItem fx:id="saveImage" mnemonicParsing="false" onAction="#onMenuSaveNormImage" text="保存图像" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              	  <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#onMenuExit" text="关闭" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="样本训练">
+            <items>
+                  <MenuItem fx:id="ReadImages" mnemonicParsing="false" onAction="#onMenuReadImages" text="读入图像集" />
+                  <MenuItem fx:id="ExtractFeatures" mnemonicParsing="false" onAction="#onMenuExtractFeatures" text="样本训练" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="图像识别">
+               <items>
+                  <MenuItem fx:id="OpenTestImage" mnemonicParsing="false" onAction="#onMenuOpenTestImage" text="打开图像" />
+                  <MenuItem fx:id="NormalizeforRecognition" mnemonicParsing="false" onAction="#onMenuNormforRecogntion" text="归一化" />
+                  <MenuItem fx:id="RecognizeImage" mnemonicParsing="false" onAction="#onMenuRecognizeImage" text="识别图像" />
+               </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane fx:id="LeftPane" layoutY="34.0" prefHeight="333.0" prefWidth="303.0">
+         <children>
+            <ImageView fx:id="ivShowImage" fitHeight="327.0" fitWidth="303.0" layoutX="7.0" layoutY="3.0" onMouseClicked="#onMouseClicked" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <ImageView fx:id="ivShowReultImage" fitHeight="333.0" fitWidth="313.0" layoutX="319.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
